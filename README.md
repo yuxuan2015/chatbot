@@ -23,13 +23,13 @@ http://blog.topspeedsnail.com/archives/10735/comment-page-1#comment-1161。
 
 http://www.easyapple.net/?p=1384&from=singlemessage&isappinstalled=0。
 
-https://github.com/zpppy/seqGan_chatbot
+[SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient](https://arxiv.org/abs/1609.05473)
 
 #建议环境
 
-ubuntu14.04
-python3.5
-tensorflow==1.10.1或者tensorflow-gpu==1.10.1
+ubuntu16.04
+python3.6
+tensorflow>=1.10.1或者tensorflow-gpu>=1.10.1
 flask==0.11.1
 
 #关于版权
