@@ -17,6 +17,7 @@
 4、详细的代码讲解可以参与我的chat文章(http://gitbook.cn/books/5a4a16da1f2e8d585e464f44/index.html)。
 
 #seqGAN版本代码执行顺序
+
 1 、在下载好代码和语料之后，将语料文件放入source_data目录下。
 
 2、按照 数据预处理器（source_data_utls.py)-->execute.py(执行器)-->app.py（可视化模块）的顺序执行就可以了
