@@ -30,6 +30,8 @@ http://www.easyapple.net/?p=1384&from=singlemessage&isappinstalled=0。
 
 [SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient](https://arxiv.org/abs/1609.05473)
 
+[seqGAN实现中文对话系统](https://github.com/vpegasus/seqGan_chatbot)
+
 #建议环境
 ```
 ubuntu16.04
