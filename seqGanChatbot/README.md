@@ -1,7 +1,7 @@
 # seqGanChatbot
 
 ### Install dependency
-- [follow here](https://github.com/algteam/rasabot/tree/master/rasabot-demo/INSTALL.md)
+- [follow here](https://github.com/yuxuan2015/chatbot/blob/master/seqGanChatbot/INSTALL.md)
 
 ## Reference
 
