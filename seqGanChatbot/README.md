@@ -1,6 +1,6 @@
 # seqGanChatbot
 
-### install dependency:
+### Install dependency
 
 
 
