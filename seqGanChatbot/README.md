@@ -14,3 +14,5 @@
 [SeqGANQA](https://github.com/cxmhfut/SeqGANQA)
 
 [SeqGAN_QA](https://github.com/WBY1993/SeqGAN_QA)
+
+[nlg-eval](https://github.com/Maluuba/nlg-eval)
