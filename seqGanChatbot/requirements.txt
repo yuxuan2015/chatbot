@@ -1,0 +1,3 @@
+jieba
+tensorflow-gpu==1.12
+pyhanlp
