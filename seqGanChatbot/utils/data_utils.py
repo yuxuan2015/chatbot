@@ -1,17 +1,4 @@
-# Copyright 2015 The TensorFlow Authors. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ==============================================================================
+# coding=utf-8
 
 """Utilities for downloading disc_data from WMT, tokenizing, vocabularies."""
 from __future__ import absolute_import
@@ -41,15 +28,21 @@ EOS_ID = 2
 UNK_ID = 3
 
 # Regular expressions used to tokenize.
-_WORD_SPLIT = re.compile(b"([.,!?\"':;)(])")
-_DIGIT_RE = re.compile(br"\d")
+# _WORD_SPLIT = re.compile("([.,!?\"':;)(])")
+# _DIGIT_RE = re.compile(r"\d")
+
 
 def basic_tokenizer(sentence):
   """Very basic tokenizer: split the sentence into a list of tokens."""
   words = []
   #sentence = tf.compat.as_bytes(sentence)
   for space_separated_fragment in sentence.strip().split():
-    words.extend(re.split(_WORD_SPLIT, space_separated_fragment))
+    try:
+      _WORD_SPLIT = re.compile("([.,!?\"':;)(])")
+      words.extend(re.split(_WORD_SPLIT, space_separated_fragment))
+    except:
+      _WORD_SPLIT = re.compile(b"([.,!?\"':;)(])")
+      words.extend(re.split(_WORD_SPLIT, space_separated_fragment))
   return [w for w in words if w]
 
 
@@ -84,7 +77,12 @@ def create_vocabulary(vocabulary_path, data_path_list, max_vocabulary_size,
             line = tf.compat.as_bytes(line)
             tokens = basic_tokenizer(line)
             for w in tokens:
-              word = _DIGIT_RE.sub(b"0", w) if normalize_digits else w
+              try:
+                _DIGIT_RE = re.compile(r"\d")
+                word = _DIGIT_RE.sub("0", w) if normalize_digits else w
+              except:
+                _DIGIT_RE = re.compile(br"\d")
+                word = _DIGIT_RE.sub(b"0", w) if normalize_digits else w
               if word in vocab:
                 vocab[word] += 1
               else:
@@ -93,9 +91,9 @@ def create_vocabulary(vocabulary_path, data_path_list, max_vocabulary_size,
     vocab_list = _START_VOCAB + sorted(vocab, key=vocab.get, reverse=True)
     if len(vocab_list) > max_vocabulary_size:
       vocab_list = vocab_list[:max_vocabulary_size]
-    with open(vocabulary_path, mode="w") as vocab_file:
+    with open(vocabulary_path, mode="w", encoding="utf8") as vocab_file:
       for w in vocab_list:
-        vocab_file.write(w + "\n")
+        vocab_file.write(w.decode("utf8") + "\n")
 
 
 def initialize_vocabulary(vocabulary_path):
@@ -154,7 +152,13 @@ def sentence_to_token_ids(sentence, vocabulary,
   if not normalize_digits:
     return [vocabulary.get(w, UNK_ID) for w in words]
   # Normalize digits by 0 before looking words up in the vocabulary.
-  return [vocabulary.get(_DIGIT_RE.sub(b"0", w), UNK_ID) for w in words]
+  try:
+    _DIGIT_RE = re.compile(r"\d")
+    ls = [vocabulary.get(_DIGIT_RE.sub("0", w), UNK_ID) for w in words]
+  except:
+    _DIGIT_RE = re.compile(br"\d")
+    ls = [vocabulary.get(_DIGIT_RE.sub(b"0", w), UNK_ID) for w in words]
+  return ls
 
 
 def data_to_token_ids(data_path, target_path, vocabulary,
