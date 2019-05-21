@@ -22,19 +22,6 @@
 
 2、按照 数据预处理器（source_data_utls.py)-->execute.py(执行器)-->app.py（可视化模块）的顺序执行就可以了
 
-# Transfomer实现chatbot
-
-1 [Chinese-Chatbot-base-on-Transformer](https://github.com/ericosmic/Chinese-Chatbot-base-on-Transformer)
-
-2 [ChineseQABot](https://github.com/st9007a/ChineseQABot)
-
-3 [transformer-chatbot](https://github.com/Zhihan1996/transformer-chatbot)
-
-4 [Transformer-in-generating-dialogue](https://github.com/EternalFeather/Transformer-in-generating-dialogue)
-
-5 [Seq2seqChatbots](https://github.com/ricsinaruto/Seq2seqChatbots)
-
-6 [chatbots2s](https://github.com/lang-ai/chatbots2s)
 
 #参考代码和文献
 
@@ -53,6 +40,20 @@ python3.6
 tensorflow>=1.10.1或者tensorflow-gpu>=1.10.1
 flask==0.11.1
 ```
+
+# Transfomer实现chatbot
+
+1 [Chinese-Chatbot-base-on-Transformer](https://github.com/ericosmic/Chinese-Chatbot-base-on-Transformer)
+
+2 [ChineseQABot](https://github.com/st9007a/ChineseQABot)
+
+3 [transformer-chatbot](https://github.com/Zhihan1996/transformer-chatbot)
+
+4 [Transformer-in-generating-dialogue](https://github.com/EternalFeather/Transformer-in-generating-dialogue)
+
+5 [Seq2seqChatbots](https://github.com/ricsinaruto/Seq2seqChatbots)
+
+6 [chatbots2s](https://github.com/lang-ai/chatbots2s)
 
 #关于版权
 
